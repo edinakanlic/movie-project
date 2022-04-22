@@ -271,7 +271,7 @@ h6 {
 /* Banner */
 .featured-content {
   min-height: calc(100vh - 81px);
-
+  max-width: 100vw;
   padding: 3rem;
 }
 .featured-title {
@@ -379,11 +379,11 @@ h6 {
 
 /* Movies Page */
 .page-name {
-  padding-top:  3rem;
+  padding-top: 3rem;
   margin-bottom: -2rem;
- font-family: 'Permanent Marker', cursive;
- font-size: 3rem;
- letter-spacing: var(--mainSpacing);
+  font-family: 'Permanent Marker', cursive;
+  font-size: 3rem;
+  letter-spacing: var(--mainSpacing);
   display: flex;
   justify-content: center;
 }
