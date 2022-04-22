@@ -1,0 +1,422 @@
+@import url('https://fonts.googleapis.com/css2?family=Akshar&family=Bebas+Neue&family=Fredoka+One&family=Lobster&family=Orelega+One&family=Oswald&family=Permanent+Marker&family=Roboto:wght@100;300;400;700&family=Whisper&display=swap');
+
+/* font-family: 'Lobster', cursive;
+font-family: 'Orelega One', cursive;
+font-family: 'Roboto', sans-serif;
+font-family: 'Fredoka One', cursive;
+font-family: 'Akshar', sans-serif;
+font-family: 'Oswald', sans-serif;
+font-family: 'Permanent Marker', cursive;
+font-family: 'Bebas Neue', cursive;
+font-family: 'Whisper', cursive; */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --primaryColor: #91d5bb;
+  --mainWhite: #fff;
+  --offWhite: #f7f7f7;
+  --mainBlack: #222;
+  --mainGrey: #393636;
+  --darkGrey: #cfcfcf;
+  --mainColor: #131417;
+  --mainTransition: all 0.5s linear;
+  --mainSpacing: 3px;
+  --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
+  --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.3);
+  --border-radius: 1rem;
+}
+/* globals */
+body {
+  padding-top: 66px;
+  background: var(--mainColor);
+  color: var(--mainWhite);
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.4;
+}
+h1 {
+  font-size: 3em;
+  line-height: 1;
+  margin-bottom: 0.5em;
+}
+h2 {
+  font-size: 2em;
+  margin-bottom: 0.75em;
+}
+h3 {
+  font-size: 1.5em;
+  line-height: 1;
+  margin-bottom: 1em;
+}
+h4 {
+  font-size: 1.2em;
+  line-height: 1.25;
+  margin-bottom: 1.25em;
+}
+h5 {
+  font-size: 1em;
+  font-weight: bold;
+  margin-bottom: 1.5em;
+}
+h6 {
+  font-size: 1em;
+  font-weight: bold;
+  margin-bottom: 1.5em;
+}
+.activated {
+  color: var(--primaryColor) !important;
+  font-size: 1.3rem !important;
+  font-weight: 900 !important;
+}
+.loading {
+  text-transform: capitalize;
+  text-align: center;
+  margin-top: 3rem;
+}
+.loading h4 {
+  font-size: 1.3rem;
+}
+.btn-container {
+  display: flex;
+  justify-content: flex-start;
+}
+.btn-primary {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 0.7rem;
+  font-weight: bold;
+  letter-spacing: var(--mainSpacing);
+  color: var(--mainGrey);
+  background: var(--primaryColor);
+  padding: 0.5rem 0.8rem;
+  border: 3px solid var(--primaryColor);
+  border-radius: 0.5rem;
+  transition: var(--mainTransition);
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-right: 0.5rem;
+}
+.btn-primary:hover {
+  background: transparent;
+  font-weight: bold;
+  color: var(--primaryColor);
+  border: 3px solid var(--primaryColor);
+}
+/* end of globals */
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.8rem 2rem 0rem 2rem;
+  margin-bottom: -1rem;
+  background-color: var(--mainColor);
+  z-index: 1;
+}
+
+.nav-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.nav-icon {
+  font-size: 2rem;
+  color: var(--mainWhite);
+  border-radius: 10px;
+  transition: var(--mainTransition);
+}
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+}
+.search {
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--mainWhite);
+  border-radius: 50px;
+  background: var(--mainBlack);
+  border: none;
+  padding: 0.5rem 1.5rem;
+  outline: none;
+}
+.empty-search {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+.nav-icon:hover {
+  color: var(--primaryColor);
+  transform: scale(1.2);
+}
+.logo-link {
+  text-decoration: none;
+}
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--primaryColor);
+}
+
+.logo h1 {
+  font-family: 'Lobster', cursive;
+  font-size: 2rem;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  letter-spacing: 1px;
+}
+.logo h3 {
+  font-family: 'Fredoka One', cursive;
+  font-size: 1rem;
+  margin-top: 0;
+  padding-top: 0;
+  letter-spacing: 2px;
+}
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  transition: var(--mainTransition);
+  height: 0;
+  overflow: hidden;
+}
+.nav-links a {
+  display: block;
+  text-decoration: none;
+  padding: 1rem 0;
+  color: var(--mainWhite);
+  transition: var(--mainTransition);
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: var(--mainSpacing);
+}
+.nav-links a:hover {
+  color: var(--primaryColor);
+  font-weight: 700;
+}
+.show-nav {
+  height: 15rem;
+}
+
+@media screen and (min-width: 576px) {
+  .logo h1 {
+    font-size: 1.8rem;
+  }
+  .logo h3 {
+    font-size: 0.9rem;
+  }
+  .nav-icon {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .nav-center {
+    max-width: 1170px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+  }
+  .nav-btn {
+    display: none;
+  }
+  .logo h1 {
+    font-size: 2rem;
+  }
+  .logo h3 {
+    font-size: 1.1rem;
+  }
+  .nav-links {
+    flex-direction: row;
+    margin-left: 6rem;
+    height: 100%;
+    min-width: 740px;
+  }
+  .nav-links a {
+    margin: 0 1rem;
+    padding: 0.5rem 0;
+  }
+  .search {
+    margin-left: 10rem;
+  }
+}
+/* end of Navbar */
+
+/* Hero */
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10rem;
+}
+/* end of Hero */
+
+/* Banner */
+.featured-content {
+  min-height: calc(100vh - 81px);
+
+  padding: 3rem;
+}
+.featured-title {
+  font-family: 'Permanent Marker', cursive;
+  letter-spacing: 6px;
+  font-size: 8rem;
+  margin-bottom: -0.5rem;
+}
+.featured-desc {
+  width: 30rem;
+  margin: 3rem 0;
+  font-family: 'Akshar', sans-serif;
+  font-weight: bold;
+  letter-spacing: var(--mainSpacing);
+}
+
+/* end of Banner */
+
+/* Movies Slider */
+.movie-list-container {
+  padding: 0 1.2rem;
+}
+.movie-list {
+  display: flex;
+  align-items: flex-start;
+  height: 20rem;
+  transform: translateX(0);
+  transition: all 1s linear;
+}
+.movie-list-title {
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  padding: 0.8rem;
+  padding-bottom: 0;
+  font-family: 'Bebas Neue', cursive;
+  letter-spacing: var(--mainSpacing);
+  font-weight: bold;
+  font-size: 2.7rem;
+}
+.movie-list-item {
+  margin-right: 2rem;
+  padding: 1rem 0.3rem;
+  position: relative;
+  transition: all 0s linear;
+}
+.movie-list-item-img {
+  width: 14rem;
+  height: 17rem;
+  border-radius: var(--border-radius);
+  transition: var(--mainTransition);
+}
+.movie-list-item-title {
+  padding: 0.2rem 0.5rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  font-family: 'Fredoka One', cursive;
+  letter-spacing: var(--mainSpacing);
+}
+.movie-list-item-about {
+  position: absolute;
+  top: 0;
+  left: 2rem;
+  right: 2rem;
+  transform: scale(0);
+  transition: var(--mainTransition);
+  width: 14rem;
+  height: 17rem;
+}
+.movie-list-item:hover .movie-list-item-about {
+  transform: scale(1);
+}
+.movie-list-item:hover .movie-list-item-img {
+  transform: scale(1.2);
+  margin: 0 2rem;
+  opacity: 0.2;
+}
+.movie-list-item-desc {
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0.5rem 0;
+}
+.movie-list-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+.arrow-icon {
+  font-size: 5.5rem;
+  position: absolute;
+  right: 0;
+  top: 33%;
+  color: var(--primaryColor);
+  background: transparent;
+  border: transparent;
+  opacity: 0.7;
+  cursor: pointer;
+  transition: var(--mainTransition);
+  transform: scale(0.9);
+}
+.arrow-icon:hover {
+  transform: scale(1.2);
+}
+/* end of Movies Slider */
+
+/* Movies Page */
+.page-name {
+  padding-top:  3rem;
+  margin-bottom: -2rem;
+ font-family: 'Permanent Marker', cursive;
+ font-size: 3rem;
+ letter-spacing: var(--mainSpacing);
+  display: flex;
+  justify-content: center;
+}
+.pagelist {
+  padding: 5rem 0;
+}
+.pagelist-center {
+  width: 80vw;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-row-gap: 1.5rem;
+  grid-column-gap: 3rem;
+  justify-content: center;
+}
+@media screen and (min-width: 776px) {
+  .pagelist-center {
+    width: 90vw;
+  }
+}
+@media screen and (min-width: 992px) {
+  .pagelist-center {
+    width: 95vw;
+    max-width: 1170px;
+  }
+}
+/* end of Movies Page */
+
+/* Single Movie */
+.single-page {
+  text-transform: uppercase;
+  display: grid;
+  justify-content: center;
+  margin: 5rem auto;
+}
+/* end of Single Movie */
