@@ -271,21 +271,39 @@ h6 {
 /* Banner */
 .featured-content {
   min-height: calc(100vh - 81px);
-  max-width: 100vw;
+  min-width: 100vw;
   padding: 3rem;
 }
 .featured-title {
   font-family: 'Permanent Marker', cursive;
   letter-spacing: 6px;
-  font-size: 8rem;
+  font-size: 4rem;
   margin-bottom: -0.5rem;
 }
 .featured-desc {
-  width: 30rem;
+  width: 15rem;
   margin: 3rem 0;
   font-family: 'Akshar', sans-serif;
   font-weight: bold;
   letter-spacing: var(--mainSpacing);
+}
+
+@media screen and (min-width: 576px) {
+  .featured-title {
+    font-size: 6rem;
+  }
+  .featured-desc {
+    width: 20rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .featured-title {
+    font-size: 8rem;
+  }
+  .featured-desc {
+    width: 30rem;
+  }
 }
 
 /* end of Banner */

@@ -13,8 +13,12 @@ const Banner = ({ children, id, title, info, img }) => {
       <p className='featured-desc'>{info}</p>
 
       <div className='btn-container'>
-        <a href='https://www.youtube.com/'>
-          <button className='btn-primary'> watch</button>
+        <a
+          href='https://www.youtube.com/'
+          type='button'
+          className='btn-primary'
+        >
+        watch
         </a>
         <Link to={`/${id}`} className='btn-primary'>
           more info

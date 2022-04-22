@@ -16,10 +16,13 @@ const Movie = ({ title,name, info, id, vote, image }) => {
         <span className='movie-list-item-title'>{title_original}</span>
         <p className='movie-list-item-desc'>{info}</p>
         <div className='btn-container'>
-          <a href='https://www.youtube.com/'>
-            <button className='btn-primary'> watch</button>
+          <a
+            href='https://www.youtube.com/'
+            type='button'
+            className='btn-primary'
+          >
+            watch
           </a>
-
           <Link to={`/${id}`} className='btn-primary'>
             more info
           </Link>
